@@ -1,14 +1,17 @@
-<script lang="ts">
+<script setup lang="ts">
+import { ref } from 'vue';
 import SelecionarIngredientes from './SelecionarIngredientes.vue';
 import SuaLista from './SuaLista.vue';
+import BotaoPrincipal from './BotaoPrincipal.vue';
 
-export default {
-    data() {
-        return {
-            ingredientes: ['Alho', 'Manteiga', 'Orégano']
-        };
-    },
-    components: { SelecionarIngredientes, SuaLista }
+const ingredientes = ref<string[]>([]);
+
+function adicionarIngrediente(ingrediente: string) {
+    ingredientes.value.push(ingrediente)
+}
+
+function removerIngrediente(ingrediente: string) {
+    ingredientes.value = ingredientes.value.filter(iLista => ingrediente !== iLista);
 }
 </script>
 
@@ -16,7 +19,10 @@ export default {
     <main class="conteudo-principal">
         <SuaLista :ingredientes="ingredientes" />
 
-        <SelecionarIngredientes />
+        <SelecionarIngredientes @adicionar-ingrediente="adicionarIngrediente($event)"
+            @remover-ingrediente="removerIngrediente($event)" />
+
+        <BotaoPrincipal :texto="'Buscar Receitas!'" />
     </main>
 </template>
 
