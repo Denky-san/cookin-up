@@ -3,7 +3,7 @@ import { obterReceitas } from '@/http';
 import type IReceita from '@/interfaces/IReceita';
 import BotaoPrincipal from './BotaoPrincipal.vue';
 import CardReceita from './CardReceita.vue';
-import type { Prop, PropType } from 'vue';
+import type { PropType } from 'vue';
 import { itensDeLista1EstaoEmLista2 } from '@/operacoes/listas';
 
 export default {

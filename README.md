@@ -1,40 +1,43 @@
-# cookin-up
+# Cookin' Up 👨‍🍳
 
-This template should help get you started developing with Vue 3 in Vite.
+Uma aplicação web para descobrir receitas baseado nos ingredientes que você tem em casa.
 
-## Recommended IDE Setup
+## Sobre o Projeto
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+O **Cookin' Up** permite que você:
+- Selecione ingredientes que tem disponíveis
+- Visualize a lista de ingredientes selecionados
+- Busque receitas que podem ser preparadas com esses ingredientes
+- Refine sua busca alterando os ingredientes a qualquer momento
 
-## Type Support for `.vue` Imports in TS
+Desenvolvido com **Vue 3** e **TypeScript**, a aplicação oferece uma interface intuitiva e responsiva para encontrar suas próximas receitas.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Como Rodar o Projeto
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+### Pré-requisitos
+- Node.js (versão 18 ou superior)
+- npm ou yarn
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+### Instalação e Execução
 
-## Customize configuration
+1. **Instale as dependências:**
+   ```sh
+   npm install
+   ```
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+2. **Inicie o servidor de desenvolvimento:**
+   ```sh
+   npm run dev
+   ```
 
-## Project Setup
+   A aplicação estará disponível em `http://localhost:5173`
 
-```sh
-npm install
-```
+### Build para Produção
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
+Para compilar a aplicação para produção:
 
 ```sh
 npm run build
 ```
+
+Os arquivos otimizados estarão na pasta `dist/`
