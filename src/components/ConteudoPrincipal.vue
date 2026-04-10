@@ -27,13 +27,14 @@ function navegar(pagina: Pagina) {
     <main class="conteudo-principal">
         <SuaLista :ingredientes="ingredientes" />
 
-        <SelecionarIngredientes v-if="conteudo === 'SelecionarIngredientes'"
-            @adicionar-ingrediente="adicionarIngrediente($event)" @remover-ingrediente="removerIngrediente($event)"
-            @buscar-receitas="navegar('MostrarReceitas')" />
+        <KeepAlive include="SelecionarIngredientes">
+            <SelecionarIngredientes v-if="conteudo === 'SelecionarIngredientes'"
+                @adicionar-ingrediente="adicionarIngrediente($event)" @remover-ingrediente="removerIngrediente($event)"
+                @buscar-receitas="navegar('MostrarReceitas')" />
 
-        <MostrarReceitas v-else-if="conteudo === 'MostrarReceitas'"
-            @editar-receitas="navegar('SelecionarIngredientes')" />
-
+            <MostrarReceitas v-else-if="conteudo === 'MostrarReceitas'"
+                @editar-receitas="navegar('SelecionarIngredientes')" :ingredientes="ingredientes" />
+        </KeepAlive>
     </main>
 </template>
 
